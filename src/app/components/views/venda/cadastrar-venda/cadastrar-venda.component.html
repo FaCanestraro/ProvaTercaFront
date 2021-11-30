@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Cadastrar Venda</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+        <mat-form-field class="input" id="cliente">
+            <label for="cliente">Cliente:</label>
+            <input matInput type="text" name="cliente" [(ngModel)]="cliente" />
+        </mat-form-field>
+
+        <mat-form-field class="input" id="formaP">
+            <label for="formaP">Forma Pagamento:</label><br>
+            <select name="formaP" [(ngModel)]="formaPagamentoId">
+                <option
+                    *ngFor="let formasP of formaP"
+                    value="{{ formasP.id }}"
+                >
+                    {{ formasP.metodo }}
+                </option>
+            </select>
+        </mat-form-field>
+
+        <mat-form-field class="input" id="item">
+            <label for="item">Item da Venda:</label>
+            <select name="item" [(ngModel)]="itemVendaId">
+                <option
+                    *ngFor="let item of itens"
+                    value="{{ item.id }}"
+                >
+                    {{ item.carrinhoId }}
+                </option>
+            </select>
+        </mat-form-field>
+    </mat-card-content>
+    <button mat-raised-button color="warn" (click)="cadastrar()">
+        Cadastrar
+    </button>
+</mat-card>
