@@ -6,7 +6,7 @@
 <table mat-table [dataSource]="vendas" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>#</th>
-        <td mat-cell *matCellDef="let venda">{{ venda.id }}</td>
+        <td mat-cell *matCellDef="let venda">{{ venda.vendaId }}</td>
     </ng-container>
     
     <ng-container matColumnDef="cliente">
@@ -24,7 +24,7 @@
     <ng-container matColumnDef="item">
         <th mat-header-cell *matHeaderCellDef>Item da Venda</th>
         <td mat-cell *matCellDef="let venda">
-            {{ venda.itemVenda }}
+            {{ venda.itemVenda.produto.nome }}
         </td>
     </ng-container>
 

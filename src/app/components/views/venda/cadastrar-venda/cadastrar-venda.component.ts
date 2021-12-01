@@ -26,7 +26,7 @@ export class CadastrarVendaComponent implements OnInit {
   ngOnInit(): void {
     this.formaService.list().subscribe((formaP) => {
       this.formaP = formaP;
-      console.log(formaP);
+      //console.log(formaP);
   });
   }
 
